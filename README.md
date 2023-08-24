@@ -18,6 +18,8 @@ Replacing the <path_to_vcpkg_dir> with the path to your vcpkg installation folde
 
 ## Screenshots
 
+![Alt text](/screenshots/img.png?raw=true "Optional Title")
+
 ## Water shader
 
 The water shader uses a normal map to simulated the ripple effect you see when looking at water. It animates this normal map over the surface of a large quad by shifting it in both the x and y directions (separately) and then blending the result together (i.e. normalize(normal1 + normal2)). The sampled normal is then used to reflect the view vector and the result of which is used to index into a cube map. A Fresnel term is approximated by using (V.N)^2 where V = view vector and N = surface normal. The refraction vector is not calculated because generally you cannot see the bottom of the ocean because of dirt etc. blocking the light rays. Instead it uses a constant colour to describe the result of a refracted ray i.e. (0.2, 0.1, 0.0).
